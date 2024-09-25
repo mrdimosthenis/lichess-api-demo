@@ -43,9 +43,6 @@
     &__clock {
       margin-bottom: -0.2em;
       color: var(--bs-gray);
-      tenths {
-        font-size: 0.7em;
-      }
     }
     &.turn &__clock {
       color: var(--board-color);

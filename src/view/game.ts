@@ -49,5 +49,5 @@ const renderGamePlayer = (ctrl: GameCtrl, color: Color) => {
     ctrl.timeOf(color),
     color == ctrl.chess.turn && ctrl.chess.fullmoves > 1 && ctrl.playing() ? ctrl.lastUpdateAt - Date.now() : 0
   );
-  return renderPlayer(ctrl, color, clock, p.name, p.title, p.rating, p.aiLevel);
+  return renderPlayer(ctrl, color, clock, p.name, p.title, p.aiLevel);
 };

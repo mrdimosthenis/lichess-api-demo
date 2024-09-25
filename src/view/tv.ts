@@ -29,5 +29,5 @@ const renderTvPlayer = (ctrl: TvCtrl, color: Color) => {
     p.seconds && p.seconds * 1000,
     color == ctrl.chess.turn ? ctrl.lastUpdateAt - Date.now() : 0
   );
-  return renderPlayer(ctrl, color, clock, p.user.name, p.user.title, p.rating);
+  return renderPlayer(ctrl, color, clock, p.user.name, p.user.title);
 };

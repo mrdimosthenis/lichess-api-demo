@@ -20,7 +20,6 @@ interface TvPlayer {
     name: string;
     title?: string;
   };
-  rating: number;
   seconds?: number;
 }
 

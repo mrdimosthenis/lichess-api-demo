@@ -25,7 +25,6 @@ export const renderPlayer = (
   clock: VNode,
   name: string,
   title?: string,
-  rating?: number,
   aiLevel?: number
 ) => {
   return h(
@@ -39,7 +38,6 @@ export const renderPlayer = (
       h('div.game-page__player__user', [
         title && h('span.game-page__player__user__title.display-5', title),
         h('span.game-page__player__user__name.display-5', aiLevel ? `Stockfish level ${aiLevel}` : name || 'Anon'),
-        h('span.game-page__player__user__rating', rating || ''),
       ]),
       h('div.game-page__player__clock.display-6', clock),
     ]

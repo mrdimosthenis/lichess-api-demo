@@ -61,8 +61,7 @@ const renderGameWidget = (game: Game) =>
     },
     [
       h('span.game-widget__opponent', [
-        h('span.game-widget__opponent__name', game.opponent.username || 'Anon'),
-        game.opponent.rating && h('span.game-widget__opponent__rating', game.opponent.rating),
+        h('span.game-widget__opponent__name', game.opponent.username || 'Anon')
       ]),
       h(
         'span.game-widget__board.cg-wrap',

@@ -5,7 +5,7 @@ export default function (ctrl: Ctrl) {
   page.base(BASE_PATH);
   page('/', async ctx => {
     if (ctx.querystring.includes('code=liu_')) history.pushState({}, '', BASE_PATH || '/');
-    ctrl.openHome();
+    await ctrl.openHome();
   });
   page('/login', async _ => {
     if (ctrl.auth.me) return page('/');

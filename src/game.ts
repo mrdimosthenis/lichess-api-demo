@@ -76,6 +76,9 @@ export class GameCtrl implements BoardCtrl {
     events: {
       move: this.userMove,
     },
+    selectable: {
+      enabled: false
+    }
   });
 
   setGround = (cg: CgApi) => (this.ground = cg);

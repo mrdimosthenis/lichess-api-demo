@@ -16,7 +16,7 @@ const userHome = (ctrl: Ctrl) => [
           attrs: { type: 'button' },
           on: { click: () => ctrl.playPool(10, 5) },
         },
-        'Play a 10+5 game'
+        'Play a disguised game'
       ),
     ]),
     h('h2.mt-5', 'Games in progress'),

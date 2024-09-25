@@ -14,30 +14,6 @@ const userHome = (ctrl: Ctrl) => [
         'button.btn.btn-outline-primary.btn-lg',
         {
           attrs: { type: 'button' },
-          on: { click: ctrl.playAi },
-        },
-        'Play the Lichess AI'
-      ),
-      h(
-        'button.btn.btn-outline-primary.btn-lg',
-        {
-          attrs: { type: 'button' },
-          on: { click: () => ctrl.playMaia(10, 0) },
-        },
-        'Play a casual 10+0 game with the maia1 BOT'
-      ),
-      h(
-        'button.btn.btn-outline-primary.btn-lg',
-        {
-          attrs: { type: 'button' },
-          on: { click: () => ctrl.playPool(10, 0) },
-        },
-        'Play a rated 10+0 game with a random opponent'
-      ),
-      h(
-        'button.btn.btn-outline-primary.btn-lg',
-        {
-          attrs: { type: 'button' },
           on: { click: () => ctrl.playPool(10, 5) },
         },
         'Play a 10+5 game'

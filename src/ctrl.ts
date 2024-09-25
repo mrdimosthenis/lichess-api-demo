@@ -2,10 +2,8 @@ import { Auth } from './auth';
 import { GameCtrl } from './game';
 import { Page } from './interfaces';
 import { Stream } from './ndJsonStream';
-import { formData } from './util';
 import OngoingGames from './ongoingGames';
 import { SeekCtrl } from './seek';
-import ChallengeCtrl from './challenge';
 
 export class Ctrl {
   auth: Auth = new Auth();
@@ -14,7 +12,6 @@ export class Ctrl {
   games = new OngoingGames();
   game?: GameCtrl;
   seek?: SeekCtrl;
-  challenge?: ChallengeCtrl;
 
   constructor(readonly redraw: () => void) {}
 
@@ -48,20 +45,6 @@ export class Ctrl {
     this.redraw();
   };
 
-  playAi = async () => {
-    this.game = undefined;
-    this.page = 'game';
-    this.redraw();
-    await this.auth.fetchBody('/api/challenge/ai', {
-      method: 'post',
-      body: formData({
-        level: 1,
-        'clock.limit': 60 * 3,
-        'clock.increment': 2,
-      }),
-    });
-  };
-
   playPool = async (minutes: number, increment: number) => {
     this.seek = await SeekCtrl.make(
       {
@@ -72,20 +55,6 @@ export class Ctrl {
       this
     );
     this.page = 'seek';
-    this.redraw();
-  };
-
-  playMaia = async (minutes: number, increment: number) => {
-    this.challenge = await ChallengeCtrl.make(
-      {
-        username: 'maia1',
-        rated: false,
-        'clock.limit': minutes * 60,
-        'clock.increment': increment,
-      },
-      this
-    );
-    this.page = 'challenge';
     this.redraw();
   };
 }

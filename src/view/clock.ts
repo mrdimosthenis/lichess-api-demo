@@ -13,8 +13,7 @@ const realTime = (millis: number) => {
   const date = new Date(millis);
 
   return h('span.clock--realtime.font-monospace', [
-    pad2(date.getUTCMinutes()) + ':' + pad2(date.getUTCSeconds()),
-    h('tenths', '.' + Math.floor(date.getUTCMilliseconds() / 100).toString()),
+    pad2(date.getUTCMinutes()) + ':' + pad2(date.getUTCSeconds())
   ]);
 };
 
